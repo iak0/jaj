@@ -19,7 +19,7 @@ function jej(message) {
             continue
         }
         if (wordTags[i][1] == 'NN' && wordTags[i][0] != "I" && wordTags[i-1][1] != '"') {
-            if (i+1 >= wordTags.length || wordTags[i+1][1] != 'NN' && wordTags[i+1][1] != 'NNS' && last > 1){
+            if (i+1 >= wordTags.length || wordTags[i+1][1] != 'NN' && wordTags[i+1][1] != 'NNS' && last > 5){
                 result += "jej "
                 i++
                 last=0
@@ -27,7 +27,7 @@ function jej(message) {
             } 
         }
         if (wordTags[i][1] == 'NNS' && wordTags[i-1][1] != '"') {
-            if (i+1 >= wordTags.length || wordTags[i+1][1] != 'NN' && wordTags[i+1][1] != 'NNS' && last > 1){
+            if (i+1 >= wordTags.length || wordTags[i+1][1] != 'NN' && wordTags[i+1][1] != 'NNS' && last > 5){
                 result += "jejes "
                 i++
                 last=0

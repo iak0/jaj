@@ -40,7 +40,7 @@ app.post('/form', function(req, res){
         db.collection('messages').insert(dbEntry, function(e) {
             if (e) throw e;
         })
-        if (req.cookies.name != name) res.cookie("name", name, { expires: new Date(Date.now() + 900000) });
+        if (req.cookies.name != name) res.cookie("name", name, { expires: new Date(Date.now() + 604800000) });
     }
     res.redirect("/")
 })
