@@ -8,7 +8,7 @@ function jej(message) {
     var wordTags = tagger.tag(lexer.lex(message))
     var result = wordTags[0][0] + " "
     if (punctuation.indexOf(wordTags[0][1]) > -1) result = result.slice(0, - 1)
-    console.log(wordTags)
+    // console.log(wordTags)
     var i = 1
     var last = 1;
     while (i < wordTags.length) {

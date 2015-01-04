@@ -27,7 +27,7 @@ app.get('/', function(req, res) {
     var db = req.db;
     var name = (req.cookies.name || "")
     db.collection('messages').find().sort({time:-1}).toArray(function (err, items) {
-            res.render('index', {date: new Date().toDateString(), name: name, messages:items});
+            res.render('index', {name: name, messages:items});
     });
 });
 
