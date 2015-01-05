@@ -33,9 +33,10 @@ app.get('/', function(req, res) {
 
 app.post('/form', function(req, res){
     var name = req.body.name
-    var message = jej(req.body.message)
-    var date = new Date().toISOString()
-    if (name && message.length > 0) { 
+    var m = req.body.message
+    if (name && m.length > 0) {
+        var message = jej(m)
+        var date = new Date().toISOString() 
         var dbEntry = {name: name, message:message, time:date}
         db.collection('messages').insert(dbEntry, function(e) {
             if (e) throw e;

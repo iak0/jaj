@@ -29,28 +29,24 @@ var main = function() {
     })
 
     //Textbox check length
-    $("#textbox").keyup(function (event) {
-        if ($(this).val().length > 0 && $("#name").val().length > 0) {
-            $(".submit").removeClass('disabled')
+    var checkInput = function (event) {
+        if ($("#textbox").val().length > 0 && $("#name").val().length > 0) {
+            $(".submit").prop("disabled",false)
         } else {
-            $(".submit").addClass('disabled')
+            $(".submit").prop("disabled",true)
         }
-    })
+    }
+
+    $("#textbox").keyup(checkInput)
+    $("#textbox").mouseleave(checkInput)
+    $("#name").keyup(checkInput)
+    $("#name").mouseleave(checkInput)
 
     //Name enter -> next field
     $("#name").keydown(function () {
         if (event.keyCode == '13') {
             event.preventDefault()
             $("#textbox").focus();
-        }
-    })
-
-    //Name check length
-    $("#name").keyup(function () {
-        if ($(this).val().length > 0 && $("#textbox").val().length > 0) {
-            $(".submit").removeClass('disabled')
-        } else {
-            $(".submit").addClass('disabled')
         }
     })
 
