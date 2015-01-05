@@ -18,7 +18,7 @@ body
             input#name(name="name" placeholder="Name" value="#{name}")
           br
           label Message:
-          textarea.form-control#textbox(name="message" style="width:100%;resize:none")
+          textarea.form-control#textbox.animated(name="message")
           div
             button.btn.btn-default.submit(type="submit" style="margin-top:5px;float:right" disabled) jej!
 
@@ -35,4 +35,5 @@ body
   
   script(src="//code.jquery.com/jquery-1.11.2.min.js")
   script(src="/jquery.timeago.js")
+  script(src="/jquery.autosize.min.js")
   script(src="/main.js")

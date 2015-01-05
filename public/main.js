@@ -1,5 +1,10 @@
 var main = function() {
 
+    //Timeago
+    $("date.timeago").timeago();
+    //autosize
+    $("#textbox").autosize();
+
     // Focus textbox
     if ($("#name").val().length == 0) {
         $("#name").focus();
@@ -37,10 +42,8 @@ var main = function() {
         }
     }
 
-    $("#textbox").keyup(checkInput)
-    $("#textbox").mouseleave(checkInput)
-    $("#name").keyup(checkInput)
-    $("#name").mouseleave(checkInput)
+    $("#textbox").bind('keyup change cut paste', function() {setTimeout(checkInput, 100)})
+    $("#name").bind('keyup change cut paste', function() {setTimeout(checkInput, 100)})
 
     //Name enter -> next field
     $("#name").keydown(function () {
@@ -60,9 +63,6 @@ var main = function() {
             $(this).closest(".message").slideUp()
         });
     });
-
-    //Timeago
-    $("date.timeago").timeago();
 }
 
 $(document).ready(main)

@@ -54,6 +54,20 @@ gray-light = #ccc
     background: bottom left linear-gradient(gray-light, gray-light) no-repeat, bottom center linear-gradient(gray-light, gray-light) repeat-x, bottom right linear-gradient(gray-light, gray-light) no-repeat
     background-size 1px 6px, 1px 1px, 1px 6px
 
+#textbox
+  width 100%
+  resize none
+  max-height 300px
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; 
+
+#textbox.animated {
+        -webkit-transition: height 0.2s;
+        -moz-transition: height 0.2s;
+        transition: height 0.2s;
+      }
+
 @media (min-width: 992px) {
 
   #sidebar {
